@@ -1,1 +1,33 @@
-<p>quote works!</p>
+
+<div class="container-fluid">
+  <h1 class="bg-dark text-light">MY QUOTES.</h1>
+  <hr>
+
+  <div class="row text-center">
+    <div class="col-md-6">
+      <div *ngFor='let quote of quote;let i = index' class="card bg-outline-dark bg-transparent text-light">
+        <div >
+          <figure class="card-body">
+            <h6 class="card-text" appHighlight id={{i}}>{{quote.name}} </h6><br>
+              <span class=" text-success text-monospace">published : {{quote.completeDate|dateCount}}</span>
+
+                 <button (click)='toggleDetail(i)' class="btn btn-block btn-outline-primary">EXPLORE</button>
+
+          </figure>
+        </div><br>
+
+       <div class="text-center">
+         <div *ngIf='quote.showDescription'>
+           <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+         </div>
+       </div>
+      </div>
+    </div>
+    <div class="col-md-6" id="top">
+      <div class="card bg-outline-dark bg-transparent text-light">
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+      </div>
+    </div>
+  </div>
+
+</div>

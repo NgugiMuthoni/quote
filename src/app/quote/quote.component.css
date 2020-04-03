@@ -1,0 +1,23 @@
+.card{
+  padding: 10px;
+  margin: 10px;
+}
+h1{
+  font-size: 30px;
+  font-family: 'monospace', cursive;
+  text-align: center;
+  padding: 10px;
+
+}
+
+.bg-outline-dark{
+  border: solid 2px ;
+}
+
+#top{
+  margin-top: 8%;
+}
+
+
+
+

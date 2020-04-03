@@ -1,1 +1,30 @@
-<p>quote-detail works!</p>
+<div class="steve">
+  <p class="text-monospace text-capitalize">
+    <span class="text-muted">Author:</span> {{quote.description}} <span class="text-muted">Submitted-by:</span> {{quote.submitted}}
+
+  </p>
+
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-4">
+          <button (click)=likebuttonclick()  class="btn btn-block btn-outline-success">
+            like <span class="badge badge-light">{{numberoflikes}}</span>
+          </button>
+      </div>
+      <div class="col-md-4">
+        <button (click)=dislikebuttonclick() class="btn btn-block btn-outline-warning">
+          dislike <span class="badge badge-light">{{numberofdislikes}}</span>
+        </button>
+      </div>
+      <div class="col-md-4">
+        <button (click)= 'quoteDelete(true)' class="btn btn-block btn-outline-danger">Delete<i class="fa fa-trash" aria-hidden="true"></i> </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
